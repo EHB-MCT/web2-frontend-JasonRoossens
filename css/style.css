@@ -1,0 +1,65 @@
+html {
+    background: url(../images/bg.png) no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+
+.navbar {
+    width: 100%;
+    margin: 0 auto;
+    text-align: center;
+    padding-top: 30px;
+    padding-bottom: 30px;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 400;
+}
+
+.navbar li {
+    list-style: none;
+    display: inline-block;
+    margin-right: 160px;
+    color: #fff;
+    vertical-align: middle;
+    text-decoration: none;
+}
+
+.navbar li:nth-child(5) {
+    margin-right: 0px;
+}
+
+li a {
+    text-decoration: none;
+    color: black;
+}
+
+.slogan {
+    position: absolute;
+    text-align: center;
+    width: 100%;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.slogan h1 {
+    font-size: 50px;
+    font-weight: 700;
+    padding: 12px;
+}
+
+.slogan button {
+    font-size: 20px;
+    margin: 10px;
+    border: #E61646 solid 4px;
+    background-color: none;
+    border-radius: 30px;
+    padding: 10px;
+    padding-left: 25px;
+    padding-right: 25px;
+}
+
+.slogan button a {
+    text-decoration: none;
+    color: #E61646;
+    font-weight: 700;
+}
