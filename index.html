@@ -5,33 +5,166 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="#" type="image" sizes="16x16">
+    <link rel="stylesheet" href="CSS/reset.css">
+    <link rel="stylesheet" href="CSS/style.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;700;900&display=swap" rel="stylesheet">
     <title>Adogtion</title>
-    <link rel="stylesheet" href="./css/reset.css">
-    <link rel="stylesheet" href="./css/style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;400;700;900&display=swap" rel="stylesheet">
 </head>
 
 <body>
-
+    <script src="JAVASCRIPT/script.js"></script>
     <header>
-        <div class="container">
-            <div class="navbar">
-                <ul>
-                    <li><a href="#">Find a dog</a></li>
-                    <li><a href="#">Find my match</a></li>
-                    <li><a href="#"><img width="100px" src="images/logo.png" /></a></li>
-                    <li><a href="#">Favorites</a></li>
-                    <li><a href="#">Search</a></li>
-                </ul>
+        <img src="IMAGES/Logo2.png" alt="" class="logo">
+        <div id="myNav" class="overlay">
+            <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+            <div class="overlay-content">
+                <a href="#">ABOUT.</a>
+                <a href="#myBtnContainer">PORTFOLIO.</a>
+                <a href="#">CLIENTS.</a>
+                <a href="#">CONTACT.</a>
             </div>
-            <div class="slogan">
-                <h1>No dog deserves to be alone</h1>
-                <button><a href="">SAVE ONE</a></button>
-            </div>
+        </div>
+        <span style="font-size:30px; font-weight: bold; cursor:pointer" onclick="openNav()">&#9776;</span>
+        </nav>
     </header>
+    <div id="container">
+        <div id="page1">
+            <section class="hello">
+                <h2>HELLO, I'M <b>MAX</b>.</h2>
+                <h1>WANNA BE FRIENDS?</h1>
+                <img src="./IMAGES/max3.png" alt="">
+            </section>
+            <section class="scroll">
+                <p>Scrol down</p>
+            </section>
+        </div>
+        <div id="page2">
+            <section class="hello">
+                <h1>Find the perfect dog match!</h1>
+                <div id="myBtnContainer">
+                    <button class="btn active" onclick="filterSelection('all')"> Show all</button>
+                    <button class="btn" onclick="filterSelection('nature')"> Puppy</button>
+                    <button class="btn" onclick="filterSelection('cars')"> Adult</button>
+                    <button class="btn" onclick="filterSelection('people')"> Senior</button>
+                </div>
+
+                <!-- Portfolio Gallery Grid -->
+                <div class="row">
+                    <div class="column nature">
+                        <div class="content">
+                            <img src="./IMAGES/max.png" alt="Mountains" style="width:100%">
+                            <h4>Max</h4>
+                            <button>wijzig</button>
+                            <button>delete</button>
+                        </div>
+                    </div>
+                    <div class="column nature">
+                        <div class="content">
+                            <img src="./IMAGES/max.png" alt="Mountains" style="width:100%">
+                            <h4>Max</h4>
+                        </div>
+                    </div>
+                    <div class="column nature">
+                        <div class="content">
+                            <img src="./IMAGES/max.png" alt="Mountains" style="width:100%">
+                            <h4>Max</h4>
+                        </div>
+                    </div>
+
+                    <div class="column cars">
+                        <div class="content">
+                            <img src="./IMAGES/max.png" alt="Mountains" style="width:100%">
+                            <h4>Max</h4>
+                        </div>
+                    </div>
+                    <div class="column cars">
+                        <div class="content">
+                            <img src="./IMAGES/max.png" alt="Mountains" style="width:100%">
+                            <h4>Max</h4>
+                        </div>
+                    </div>
+                    <div class="column cars">
+                        <div class="content">
+                            <img src="./IMAGES/max.png" alt="Mountains" style="width:100%">
+                            <h4>Max</h4>
+                        </div>
+                    </div>
+
+                    <div class="column people">
+                        <div class="content">
+                            <img src="./IMAGES/max.png" alt="Mountains" style="width:100%">
+                            <h4>Max</h4>
+                        </div>
+                    </div>
+                    <div class="column people">
+                        <div class="content">
+                            <img src="./IMAGES/max.png" alt="Mountains" style="width:100%">
+                            <h4>Max</h4>
+                        </div>
+                    </div>
+                    <div class="column people">
+                        <div class="content">
+                            <img src="./IMAGES/max.png" alt="Mountains" style="width:100%">
+                            <h4>Max</h4>
+                        </div>
+                    </div>
+                    <!-- END GRID -->
+                </div>
+            </section>
+        </div>
+        <script>
+            filterSelection("all")
+
+            function filterSelection(c) {
+                var x, i;
+                x = document.getElementsByClassName("column");
+                if (c == "all") c = "";
+                for (i = 0; i < x.length; i++) {
+                    w3RemoveClass(x[i], "show");
+                    if (x[i].className.indexOf(c) > -1) w3AddClass(x[i], "show");
+                }
+            }
+
+            function w3AddClass(element, name) {
+                var i, arr1, arr2;
+                arr1 = element.className.split(" ");
+                arr2 = name.split(" ");
+                for (i = 0; i < arr2.length; i++) {
+                    if (arr1.indexOf(arr2[i]) == -1) {
+                        element.className += " " + arr2[i];
+                    }
+                }
+            }
+
+            function w3RemoveClass(element, name) {
+                var i, arr1, arr2;
+                arr1 = element.className.split(" ");
+                arr2 = name.split(" ");
+                for (i = 0; i < arr2.length; i++) {
+                    while (arr1.indexOf(arr2[i]) > -1) {
+                        arr1.splice(arr1.indexOf(arr2[i]), 1);
+                    }
+                }
+                element.className = arr1.join(" ");
+            }
+
+
+            // Add active class to the current button (highlight it)
+            var btnContainer = document.getElementById("myBtnContainer");
+            var btns = btnContainer.getElementsByClassName("btn");
+            for (var i = 0; i < btns.length; i++) {
+                btns[i].addEventListener("click", function () {
+                    var current = document.getElementsByClassName("active");
+                    current[0].className = current[0].className.replace(" active", "");
+                    this.className += " active";
+                });
+            }
+        </script>
+
+
+    </div>
 </body>
 
 </html>
