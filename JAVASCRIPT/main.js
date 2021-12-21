@@ -1,3 +1,14 @@
+function fetchDogs() {
+
+    fetch('https://api.thedogapi.com/v1/breeds')
+        .then(response => response.json())
+        .then(data => {
+            console.log(data);
+            this.data = data;
+
+        });
+}
+
 (() => {
     let e = "";
     window.onload = function () {
@@ -30,6 +41,6 @@
         })), document.getElementById("challengeList").addEventListener("click", (e => {
             const n = e.target.closest(".challenge").id;
             console.log(e.target), n && (-1 !== e.target.className.indexOf("edit") && console.log("edit"), -1 !== e.target.className.indexOf("trash") && console.log("trash"))
-        })), n()
+        })), n(), fetchDogs();
     }
 })();
