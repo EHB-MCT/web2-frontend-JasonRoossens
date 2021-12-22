@@ -16,7 +16,7 @@ function fetchDogs() {
             e = "";
             let n = await fetch("https://web2-courseproject-jason.herokuapp.com/dogs");
             (await n.json()).forEach((n => {
-                e += `<div class="column show id="${n._id} ">   \n   <img src="./IMAGES/max.png" alt="Mountains" style="width:100%">\n         <h1>${n.name}</h1> <h2>${n.breed} - ${n.generation}</h2>\n     <button>wijzig</button>    <button>verwijder</button   </div>\n                          \n                 </div>`, `<div id="${n._id}">   \n   <img src="./IMAGES/max.png" alt="Mountains" style="width:100%">\n         <h1>${n.name}</h1> <h2>${n.breed} -${n.generation}</h2>\n            </div>\n           </div>`
+                e += `<div class="column show id="${n._id} ">   \n   <img src="${"./IMAGES/max.png"}" alt="Mountains" style="width:100%">\n         <h1>${n.name}</h1> <h2>${n.breed} - ${n.generation}</h2>\n     <button class="edit"><i class="fas fa-edit"></i></button>    <button class="trash"> <i class="fas fa-trash"></i></button   </div>\n                          \n                 </div>`, `<div id="${n._id}">   \n   <img src="./IMAGES/max.png" alt="Mountains" style="width:100%">\n         <h1>${n.name}</h1> <h2>${n.breed} -${n.generation}</h2>\n            </div>\n           </div>`
             })), document.getElementById("challengeList").innerHTML = e
         }
         document.getElementById("uploadForm").addEventListener("submit", (e => {
@@ -39,7 +39,7 @@ function fetchDogs() {
                 }))
             }()
         })), document.getElementById("challengeList").addEventListener("click", (e => {
-            const n = e.target.closest(".challenge").id;
+            const n = e.target.closest(".show").id;
             console.log(e.target), n && (-1 !== e.target.className.indexOf("edit") && console.log("edit"), -1 !== e.target.className.indexOf("trash") && console.log("trash"))
         })), n(), fetchDogs();
     }
