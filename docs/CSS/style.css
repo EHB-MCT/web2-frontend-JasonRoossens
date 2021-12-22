@@ -129,6 +129,15 @@ header {
     width: 90%;
 }
 
+#page5 {
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 90%;
+    height: auto;
+}
+
 .hello {
     width: 100%;
     padding-top: 2%;
@@ -487,8 +496,124 @@ h1 {
     cursor: pointer;
 }
 
-.show img,
-h1,
-h2 {
+
+.show a {
+    text-decoration: none;
+    color: black;
+}
+
+.dogAlg {
+    width: 50%;
+    padding-top: 2%;
+    padding-bottom: 2%;
+    font-size: 50px;
+    font-weight: 600;
+    float: left;
+
+}
+
+.dogSpe {
+    width: 50%;
+    padding-top: 10%;
+    padding-bottom: 2%;
+    font-size: 50px;
+    font-weight: 600;
+    float: left;
+
+}
+
+.dogAlg h1 {
+    padding-bottom: 10px;
+}
+
+.dogAlg h2 {
+    padding-bottom: 15px;
+    font-size: 30px;
+    font-weight: 500;
+}
+
+.dogAlg img {
+    width: 80%;
+    border: solid #E61646 5px;
+    border-radius: 30px;
+}
+
+.dogSpe h1 {
+    width: auto;
+    padding-bottom: 10px;
+    font-size: 30px;
+}
+
+.dogSpe h2 {
+    padding-bottom: 15px;
+    font-size: 25px;
+    font-weight: 500;
+    line-height: 35px;
+}
+
+.dogSpe img {
+    width: 80%;
+    border: solid #E61646 5px;
+    border-radius: 30px;
+}
+
+.dogSpe p {
+    font-size: 25px;
+    font-weight: 500;
+    line-height: 35px;
+    padding-bottom: 20px;
+}
+
+.dogSpe b {
+    padding-bottom: 10px;
+    font-size: 30px;
+    font-weight: 900;
+}
+
+.back a {
+    text-decoration: none;
+    color: #E61646;
+    font-size: 20px;
+    font-weight: 900;
+
+}
+
+.back {
+    border: none;
+    width: 18%;
+    background-color: whitesmoke;
+}
+
+#faq {
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 90%;
+    padding-bottom: 100px;
+}
+
+
+.accordion {
+    background-color: #E61646;
+    color: #444;
     cursor: pointer;
+    padding: 18px;
+    width: 60%;
+    text-align: center;
+    border: none;
+    outline: none;
+    transition: 0.4s;
+    color: whitesmoke;
+}
+
+/* Style the accordion panel. Note: hidden by default */
+.panel {
+    padding: 20px 18px;
+    background-color: white;
+    text-align: center;
+    display: none;
+    overflow: hidden;
+    width: 57.5%;
+    transition: max-height 0.2s ease-out;
 }
