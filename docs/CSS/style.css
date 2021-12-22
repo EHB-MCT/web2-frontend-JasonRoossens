@@ -591,8 +591,13 @@ h1 {
     align-items: center;
     width: 90%;
     padding-bottom: 100px;
+    padding-top: 20px;
 }
 
+#page5 h1 {
+    font-weight: 900;
+    padding-bottom: 30px;
+}
 
 .accordion {
     background-color: #E61646;
@@ -601,16 +606,21 @@ h1 {
     padding: 18px;
     width: 60%;
     text-align: center;
-    border: none;
+    border: solid 1px white;
+    border-radius: 10px;
     outline: none;
     transition: 0.4s;
     color: whitesmoke;
 }
 
+.accordion h2 {
+    font-size: 25px;
+}
+
 /* Style the accordion panel. Note: hidden by default */
 .panel {
     padding: 20px 18px;
-    background-color: white;
+    background-color: whitesmoke;
     text-align: center;
     display: none;
     overflow: hidden;
