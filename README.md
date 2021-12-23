@@ -10,3 +10,4 @@ https://github.com/EHB-MCT/web2-exercises-mikederycke-1
 
 https://github.com/EHB-MCT/web-2-groupproject-frontend-team-teacher
 
+https://dog.ceo/dog-api/
