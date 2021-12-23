@@ -19,3 +19,5 @@ https://codepen.io/
 https://fontawesome.com/
 
 https://fonts.google.com/
+
+Link to wireframes: https://xd.adobe.com/view/bc243361-6280-4afc-8ecb-5d3364ad5c94-e977/
