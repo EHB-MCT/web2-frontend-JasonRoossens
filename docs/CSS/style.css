@@ -501,6 +501,10 @@ h1 {
     color: black;
 }
 
+#dogPage {
+    padding-bottom: 150px;
+}
+
 .dogAlg {
     width: 50%;
     padding-top: 2%;
@@ -685,4 +689,8 @@ h1 {
         text-align: center;
 
     }
+}
+
+footer {
+    padding-bottom: 50px;
 }
