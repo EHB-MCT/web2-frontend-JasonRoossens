@@ -348,6 +348,7 @@ h1 {
     float: left;
     width: 25%;
     display: none;
+    padding-bottom: 35px;
 
     /* Hide all elements by default */
 }
@@ -425,12 +426,12 @@ h1 {
     -webkit-animation: arrow 2s infinite;
 }
 
-#challengeList {
+#dogList {
     margin-top: 80px;
     margin-bottom: 150px;
 }
 
-#challengeList h2 {
+#dogList h2 {
     font-size: 25px;
     margin-top: 5px;
 }

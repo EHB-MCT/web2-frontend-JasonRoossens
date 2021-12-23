@@ -1,81 +1,19 @@
-let challengesList;
-let challengesHTML = "";
+let dogsList;
+let dogsHTML = "";
 
 window.onload = function () {
-
-    const insertForm = document.getElementById("uploadForm")
-
-    async function createChallenge(event) {
-
-        //Get the data from the form fields
-        let challengeName = document.getElementById('name').value;
-        let challengePts = document.getElementById('points').value;
-        let challengeCourse = document.getElementById('course').value;
-        let challengeSession = document.getElementById('session').value;
-
-        fetch(`https://web2-courseproject-jason.herokuapp.com/dogs`, {
-            method: "POST",
-            headers: {
-                'Content-Type': 'application/json',
-            },
-            body: JSON.stringify({
-                name: challengeName,
-                points: challengePts,
-                course: challengeCourse,
-                session: challengeSession
-            })
-
-        }).then(response => {
-            return response.json()
-        }).then(async data => {
-            console.log('Success:', data);
-            //Add succes message
-
-            //Update list
-            await renderChallenges();
-        })
-    }
-
-    // When clicking submit on the form
-    insertForm.addEventListener('submit', event => {
-        event.preventDefault();
-
-        createChallenge(event);
-
-    });
-
-    //Add listener to challenge list
-    document.getElementById('challengeList').addEventListener('click', (event) => {
-        //Keep searching for the parent node to register the correct click
-        const challengeId = event.target.closest('.challenge').id;
-        console.log(event.target)
-
-        if (challengeId) {
-            if (event.target.className.indexOf('edit') !== -1) {
-                console.log('edit')
-
-            }
-
-            if (event.target.className.indexOf('trash') !== -1) {
-                console.log('trash')
-            }
-
-        }
-
-    })
-
-    async function renderChallenges() {
+    async function renderDogs() {
         // Clean previous list
-        challengesHTML = '';
+        dogsHTML = '';
 
         let resp = await fetch('https://web2-courseproject-jason.herokuapp.com/dogs');
         let data = await resp.json();
 
-        data.forEach(challenge => {
-            challengesHTML += `<div class="row challenge" 
-            id="${challenge._id}">   
+        data.forEach(dog => {
+            challengesHTML += `<div class="row dog" 
+            id="${dog._id}">   
             <div class="col-10">
-                <p>${challenge.name} - ${challenge.generation} - ${challenge.breed}</p>
+                <p>${dog.name} - ${dog.generation} - ${dog.breed}</p>
             </div>
             <div class="col-1 edit">
                 <i class="fas fa-edit"></i> 
@@ -86,11 +24,11 @@ window.onload = function () {
         </div>`
         })
 
-        document.getElementById("challengeList").innerHTML = challengesHTML;
+        document.getElementById("dogList").innerHTML = dogsHTML;
 
     }
 
-    renderChallenges();
+    renderDogs();
 
 
 }
