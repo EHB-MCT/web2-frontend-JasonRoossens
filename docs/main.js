@@ -1,1 +1,1 @@
-window.onload=function(){console.log("Loaded!!!!!!")};
+(()=>{let e=[];fetch("https://web2-courseproject-retake.herokuapp.com/dogs").then((e=>e.json())).then((o=>{e=o,console.log(o)})),fetch("https://api.thedogapi.com/v1/breeds").then((e=>e.json())).then((o=>{e=o,console.log(e)}))})();
