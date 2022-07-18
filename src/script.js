@@ -62,18 +62,35 @@ window.onload = function () {
 
     })
 
+    function fetchDogImages() {
+
+        fetch('https://api.thedogapi.com/v1/breeds')
+            .then(response => response.json())
+            .then(data => {
+                console.log(data[5].name);
+                this.data = data;
+
+            });
+
+    }
+
     async function renderDogs() {
-        // Clean previous list
+
+        fetchDogImages();
+
         dogsHTML = '';
 
         let resp = await fetch('https://web2-courseproject-retake.herokuapp.com/dogs');
         let data = await resp.json();
+
+        // <img src="${this.data[1].image.url}" alt="Dogs" style="width:90%"></img> (add an image)
 
         data.forEach(dog => {
             dogsHTML += `<div class="row dog" 
             id="${dog._id}">   
             <div class="col-10">
                 <p>${dog.name} - ${dog.generation} - ${dog.breed}</p>
+                
             </div>
             <div class="col-1 edit">
                 <i class="fas fa-edit"></i> 
@@ -92,3 +109,34 @@ window.onload = function () {
 
 
 }
+
+
+
+// select with seach
+
+/* $(document).ready(function () {
+    $('select').selectize({
+        sortField: 'text'
+    });
+}); */
+
+
+function fetchBreeds() {
+    $.get('https://dog.ceo/api/breeds/list/all', (data) => {
+        const breedNames = data.message;
+        console.log(data.message)
+        const select = document.getElementById('breed');
+
+        for (const key in breedNames) {
+            if (breedNames.hasOwnProperty(key)) {
+                const option = document.createElement('option');
+                option.value = key;
+                option.innerHTML = key;
+
+                select.appendChild(option);
+            }
+        }
+    });
+
+}
+fetchBreeds();

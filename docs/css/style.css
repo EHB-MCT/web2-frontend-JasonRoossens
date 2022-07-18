@@ -99,6 +99,15 @@ main .container .row .col-6 form input {
     background-color: #FFF;
 }
 
+main .container .row .col-6 form select {
+    width: 90%;
+    margin-bottom: 1.2rem;
+    border: 1px solid #E4E4E7;
+    padding: 1rem;
+    border-radius: 4px;
+    background-color: #FFF;
+}
+
 main .container .row .col-6 form input::placeholder {
     color: #A1A1AA;
     font-weight: 300;
