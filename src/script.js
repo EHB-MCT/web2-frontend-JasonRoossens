@@ -52,10 +52,12 @@ window.onload = function () {
             if (event.target.className.indexOf('edit') !== -1) {
                 console.log('edit')
 
+
             }
 
             if (event.target.className.indexOf('trash') !== -1) {
                 console.log('trash')
+
             }
 
         }
@@ -86,10 +88,10 @@ window.onload = function () {
         // <img src="${this.data[1].image.url}" alt="Dogs" style="width:90%"></img> (add an image)
 
         data.forEach(dog => {
-            dogsHTML += `<div class="row dog" 
+            dogsHTML += `<div class="row dog dogCard" 
             id="${dog._id}">   
             <div class="col-10">
-                <p>${dog.name} - ${dog.generation} - ${dog.breed}</p>
+                <p><h3>${dog.name}</h3> ${dog.generation} - ${dog.breed}</p>
                 
             </div>
             <div class="col-1 edit">
@@ -140,3 +142,5 @@ function fetchBreeds() {
 
 }
 fetchBreeds();
+
+// https://www.youtube.com/watch?v=W1Kttu53qTg
