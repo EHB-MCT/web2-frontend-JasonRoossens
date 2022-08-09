@@ -11,62 +11,75 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/selectize.js/0.12.6/js/standalone/selectize.min.js"
         integrity="sha256-+C0A5Ilqmu4QcSPxrlGpaZxJ04VjsRjKu+G82kl5UJk=" crossorigin="anonymous"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./css/reset.css" type="text/css">
     <link rel="stylesheet" href="./css/style.css" type="text/css">
     <script src="./main.js"></script>
 </head>
-<!-- This html and css was written by Team Cas for a group project in Web II
-     Many thanks to the students: Joachim, Rhys and Cas
-     This saves a lot of time for the teacher!;)-->
 
 <body>
     <header>
         <nav>
             <div class="nav">
-                <h2>Nav</h2>
+                <div class="a"><a href="#">Add a dog</a></div>
+                <div class="a"><a href="#">Breeds</a></div>
+                <div class="b"><img src="./images/logo2.png" alt=""></div>
+                <div class="c"><a href="#">About</a></div>
             </div>
         </nav>
 
 
     </header>
+    <div class="addContainer">
+        <h2><i class="fas fa-plus"></i> Add a dog</h2>
 
+        <form id="uploadForm">
+            <label for="name">Name of the dog <span class="required">*</span></label>
+            <input type="text" name="name" id="name" placeholder="Barry">
+            <label for="generation">Dog generation <span class="required">*</span></label>
+            <select class="minimal" id="generation" name="generation">
+                <option value="">Select the generation...</option>
+                <option value="Puppy">Puppy</option>
+                <option value="Adult">Adult</option>
+                <option value="Senior">Senior</option>
+            </select>
+
+            <label for="breed">Dog breed <span class="required">*</span></label>
+            <select class="minimal" id="breed" name="breed">
+                <option value="">Select the breed...</option>
+            </select>
+            <button type="submit">ADD DOG</button>
+        </form>
+    </div>
     <main role="main">
-        <div class="addContainer">
-            <h3><i class="fas fa-plus"></i>Add a dog</h3>
 
-            <form id="uploadForm">
-                <label for="name">Name of the dog <span class="required">*</span></label>
-                <input type="text" name="name" id="name" placeholder="Barry">
-                <label for="generation">Dog generation <span class="required">*</span></label>
-                <select id="generation" name="generation">
-                    <option value="">Select the generation...</option>
-                    <option value="Puppy">Puppy</option>
-                    <option value="Adult">Adult</option>
-                    <option value="Senior">Senior</option>
-                </select>
-
-                <label for="breed">Dog breed <span class="required">*</span></label>
-                <select id="breed" name="breed">
-                    <option value="">Select the breed...</option>
-                </select>
-                <button type="submit">Add dog</button>
-            </form>
         </div>
-        </div>
-
-        <div class="listContainer">
-            <h3><i class="fas fa-list"></i> All dogs looking for a home</h3>
-
-
-
-            <div id="dogList"></div>
-
+        <div id="content">
             <div id="Filter">
-                <P>Filter</P>
+                <form action="">
+                    <label for="genFilter">FILTER</label><br>
+                    <select class="minimal" id="genFilter" name="genFilter">
+                        <option value="">Any</option>
+                        <option value="Puppy">Newest</option>
+                        <option value="Adult">Oldest</option>
+                        <option value="Senior">Name: A-Z</option>
+                        <option value="Senior">Name: Z-A</option>
+                    </select>
+                </form>
+            </div>
+            <div id="dogList">
             </div>
 
         </div>
-    </main>
 
+
+
+        </div>
+    </main>
+    <footer>footer</footer>
 </body>
+
 
 </html>

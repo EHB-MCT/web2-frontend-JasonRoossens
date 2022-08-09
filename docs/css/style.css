@@ -1,48 +1,207 @@
 body {
-    background-color: aqua;
+    background-color: #EFEFEF;
+    font-family: Roboto;
+    position: relative;
+    min-height: 100vh;
+}
+
+select {
+
+
+    /* reset */
+
+    margin: 0;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+}
+
+
+select.minimal {
+    background-image:
+        linear-gradient(45deg, transparent 50%, gray 50%),
+        linear-gradient(135deg, gray 50%, transparent 50%),
+        linear-gradient(to right, #ccc, #ccc);
+    background-position:
+        calc(100% - 20px) calc(1em + 2px),
+        calc(100% - 15px) calc(1em + 2px),
+        calc(100% - 2.5em) 0.5em;
+    background-size:
+        5px 5px,
+        5px 5px,
+        1px 1.5em;
+    background-repeat: no-repeat;
+}
+
+a {
+    text-decoration: none;
+    color: #4d4751;
+
 }
 
 .nav {
+    display: flex;
+    font-weight: 700;
+    border-top: 5px solid #FF245B;
+
+}
+
+.a,
+.b,
+.c {
+    background: #efefef;
+
+
+}
+
+.a {
+    padding-left: 30px;
+    padding-top: 26px;
+}
+
+.b {
+    flex: 1;
     text-align: center;
+    padding-right: 200px;
+}
+
+.b img {
+    width: 40px;
+    padding: 10px;
+}
+
+.c {
+    padding-right: 30px;
+    padding-top: 26px;
+    position: absolute;
+    right: 0;
+}
+
+main {
+    background-color: #efefef;
+    text-align: center;
+    padding-left: 100px;
+    padding-right: 100px;
 }
 
 .addContainer {
-    background-color: blueviolet;
+    background-color: #FF245B;
+    height: 200px;
 }
 
-.addContainer h3 {
+.addContainer h2 {
+    color: whitesmoke;
+    font-size: 30px;
     text-align: center;
-    padding-top: 20px;
+    padding-top: 40px;
+    padding-bottom: 0px;
+    font-weight: 700;
 }
 
 .addContainer form {
     text-align: center;
-    padding-top: 10px;
+    padding-top: 25px;
     padding-bottom: 20px;
 }
 
-.listContainer {
-    background-color: chartreuse;
+.addContainer label {
+    color: whitesmoke;
+    padding: 5px;
+}
+
+.addContainer input {
+    color: whitesmoke;
+    padding: 10px;
+    border-radius: 6px;
+    border: #FF245B;
+    margin-right: 20px;
+}
+
+.addContainer select {
+    width: 15%;
+    margin-top: 10px;
+    padding: 10px;
+    border-radius: 6px;
+    margin-right: 10px;
+}
+
+.addContainer button {
+    background-color: #FF245B;
+    color: white;
+    padding: 10px 30px 10px 30px;
+    border-radius: 20px;
+    border: whitesmoke solid 3px;
+    margin-right: 20px;
+    font-weight: 700;
 }
 
 #dogList {
-    background-color: tomato;
-    width: 74%;
-    float: right;
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    background-color: #EFEFEF;
+    padding-top: 10px;
+    padding-bottom: 50px;
+
 }
 
 #Filter {
-    width: 25%;
-    background-color: sienna;
+    padding-top: 25px;
+    width: 100%;
+    height: 50%;
     float: left;
+    text-align: center;
+    background-color: #efefef;
 }
 
+#Filter label {
+    color: #4d4751;
+    font-weight: 700;
+}
+
+
+
+#genFilter {
+    width: 20%;
+    margin-top: 10px;
+    padding: 10px;
+    border-radius: 6px;
+}
+
+
 .dogCard {
-    background-color: red;
-    height: 250px;
+    background-color: white;
+    height: auto;
     width: 250px;
     float: left;
-    margin: 2.33%;
+    margin: 1.5%;
     border-radius: 12px;
+    text-align: center;
+    padding-bottom: 20px;
+}
+
+.dogCard h3 {
+    color: #FF245B;
+    padding-top: 10px;
+    padding-bottom: 7px;
+    font-size: 20px;
+    font-weight: 700;
+}
+
+.cardImg {
+    border-radius: 8px 8px 0px 0px;
+}
+
+footer {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 20px;
+    padding: 4px;
+    /* Height of the footer */
+    background: #FF245B;
+    color: white;
     text-align: center;
 }

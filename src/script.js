@@ -1,6 +1,7 @@
 let dogsList;
 let dogsHTML = "";
 
+
 window.onload = function () {
 
     const insertForm = document.getElementById("uploadForm")
@@ -59,6 +60,10 @@ window.onload = function () {
                 console.log('trash')
 
             }
+            if (event.target.className.indexOf('heart') !== -1) {
+                console.log('favorite')
+
+            }
 
         }
 
@@ -69,7 +74,6 @@ window.onload = function () {
         fetch('https://api.thedogapi.com/v1/breeds')
             .then(response => response.json())
             .then(data => {
-                console.log(data[5].name);
                 this.data = data;
 
             });
@@ -89,19 +93,26 @@ window.onload = function () {
 
         data.forEach(dog => {
             dogsHTML += `<div class="row dog dogCard" 
-            id="${dog._id}">   
+            id="${dog._id}"> 
             <div class="col-10">
+                <img src="./images/dog.jpg" class="cardImg" alt="Girl in a jacket" width="250" height="180">
                 <p><h3>${dog.name}</h3> ${dog.generation} - ${dog.breed}</p>
-                
             </div>
-            <div class="col-1 edit">
-                <i class="fas fa-edit"></i> 
-            </div>                         
-            <div class="col-1 trash">
-                <i class="fas fa-trash"></i>
+            
             </div>
+            
         </div>`
         })
+
+        //not used
+        /* <div class="col-1 favorite">
+                <a id="${dog._id}"><i class="far fa-heart"></i></a>
+                <div class="col-1 edit">
+                <i id="${dog._id}" class="fas fa-edit"></i> 
+            </div>                         
+            <div class="col-1 trash">
+                <i id="${dog._id}" class="fas fa-trash"></i>
+            </div> */
 
         document.getElementById("dogList").innerHTML = dogsHTML;
 
@@ -114,7 +125,7 @@ window.onload = function () {
 
 
 
-// select with seach
+// select with search
 
 /* $(document).ready(function () {
     $('select').selectize({
@@ -141,6 +152,7 @@ function fetchBreeds() {
     });
 
 }
+
 fetchBreeds();
 
 // https://www.youtube.com/watch?v=W1Kttu53qTg
