@@ -228,3 +228,14 @@ footer {
     padding-bottom: 0px;
     font-weight: 700;
 }
+
+#infoContainer {
+    width: 100%;
+}
+
+#dog-image {
+    margin: 16px auto;
+    object-fit: contain;
+    width: 50%;
+
+}
