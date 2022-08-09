@@ -54,7 +54,6 @@ const fillDogDescription = ({
     name,
     temperament,
     life_span: lifeSpan,
-    origin,
     height,
     weight
 
@@ -79,10 +78,6 @@ const fillDogDescription = ({
     createDescriptionEntry({
         label: 'Life span',
         value: lifeSpan
-    })
-    createDescriptionEntry({
-        label: 'Origin',
-        value: origin
     })
     createDescriptionEntry({
         label: 'Height [cm]',

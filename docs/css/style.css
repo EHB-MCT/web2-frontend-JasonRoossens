@@ -122,7 +122,7 @@ main {
 }
 
 .addContainer input {
-    color: whitesmoke;
+    color: #FF245B;
     padding: 10px;
     border-radius: 6px;
     border: #FF245B;
@@ -217,8 +217,6 @@ footer {
 }
 
 /* Breed page */
-
-#breedContainer {}
 
 #breedContainer h2 {
     color: #FF245B;
