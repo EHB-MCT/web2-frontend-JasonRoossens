@@ -25,9 +25,80 @@ const fillDogImage = (imageUrl) => {
     document.querySelector('#dog-image').setAttribute('src', imageUrl);
 }
 
+const createDescriptionEntry = ({
+    label,
+    value
+}) => {
+    const descriptionTerm = document.createElement('dt');
+    descriptionTerm.textContent = label;
+    const descriptionValue = document.createElement('dd');
+    descriptionValue.textContent = value;
+    const parentElement = document.querySelector('#dog-description')
+    parentElement.appendChild(descriptionTerm);
+    parentElement.appendChild(descriptionValue);
+}
+
+const clearDogDescription = () => {
+    const descriptionElement = document.querySelector(
+        '#dog-description'
+    )
+
+    while (descriptionElement.firstChild) {
+        descriptionElement.removeChild(descriptionElement.firstChild);
+    }
+}
+
+const fillDogDescription = ({
+    bred_for: bredFor,
+    bred_group: bredGroup,
+    name,
+    temperament,
+    life_span: lifeSpan,
+    origin,
+    height,
+    weight
+
+}) => {
+    clearDogDescription();
+    createDescriptionEntry({
+        label: 'Name',
+        value: name
+    })
+    createDescriptionEntry({
+        label: 'Bred for',
+        value: bredFor
+    })
+    createDescriptionEntry({
+        label: 'Bred group',
+        value: bredGroup
+    })
+    createDescriptionEntry({
+        label: 'Temperament',
+        value: temperament
+    })
+    createDescriptionEntry({
+        label: 'Life span',
+        value: lifeSpan
+    })
+    createDescriptionEntry({
+        label: 'Origin',
+        value: origin
+    })
+    createDescriptionEntry({
+        label: 'Height [cm]',
+        value: height.metric
+    })
+    createDescriptionEntry({
+        label: 'Weight [kg]',
+        value: weight.metric
+    })
+}
+
 
 const GetDogByBreed = async (breedId) => {
 
+    const loadingElement = document.querySelector('.loading');
+    loadingElement.classList.add('show-loading')
     const [data] = await fetch(BASE_API_URL + '/images/search?include_breed=1&breed_id=' + breedId).then((data) => data.json())
     const {
         url: imageUrl,
@@ -35,6 +106,7 @@ const GetDogByBreed = async (breedId) => {
     } = data;
     fillDogImage(imageUrl);
     fillDogDescription(breeds[0]);
+    loadingElement.classList.remove('show-loading');
 }
 
 const changeDog = () => {

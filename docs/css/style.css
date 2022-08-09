@@ -239,3 +239,11 @@ footer {
     width: 50%;
 
 }
+
+.loading {
+    display: none;
+}
+
+.show-loading {
+    display: block;
+}
