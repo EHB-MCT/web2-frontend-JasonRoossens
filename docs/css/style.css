@@ -239,6 +239,11 @@ footer {
     width: 100%;
 }
 
+#infoContainer h3 {
+    color: #FF245B;
+    padding-top: 20px;
+}
+
 #dog-image {
     float: left;
     margin: 16px auto;
