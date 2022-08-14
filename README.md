@@ -35,6 +35,7 @@ Links used:
 - https://www.w3schools.com/
 - https://codepen.io/
 - https://documenter.getpostman.com/view/4016432/the-dog-api/RW81vZ4Z#intro
+- https://moderncss.dev/custom-select-styles-with-pure-css/
 
 
 
