@@ -105,3 +105,5 @@ const changeDog = () => {
 }
 
 fetchDogBreeds();
+
+console.log('webpack works')
