@@ -250,7 +250,7 @@ footer {
 }
 
 #dog-description {
-    padding-top: 115px;
+    padding-top: 70px;
 }
 
 #dog-description dt {
@@ -258,7 +258,7 @@ footer {
     font-size: 25px;
     padding-bottom: 5px;
     text-align: left;
-
+    font-weight: 600;
 }
 
 #dog-description dd {
@@ -273,4 +273,44 @@ footer {
 
 .show-loading {
     display: block;
+}
+
+/* About page */
+#aboutImg {
+    width: 50%;
+    float: left;
+}
+
+#aboutImg img {
+    text-align: center;
+    display: block;
+    margin: auto;
+    width: 80%;
+    padding-top: 120px;
+    padding-left: 50px;
+}
+
+#aboutText {
+    width: 35%;
+    float: right;
+    text-align: center;
+    padding: 270px 200px 80px 80px;
+}
+
+#aboutText h2 {
+    color: #FF245B;
+    font-size: 50px;
+    padding-bottom: 10px;
+    font-weight: 700;
+}
+
+#aboutText h3 {
+    font-size: 30px;
+    padding-bottom: 10px;
+}
+
+#aboutText p {
+    font-size: 17px;
+    line-height: 25px;
+    padding-bottom: 10px;
 }
