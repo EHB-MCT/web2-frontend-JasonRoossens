@@ -5,10 +5,10 @@ const fetchDogBreeds = async () => {
 
     const response = await fetch(BASE_API_URL + '/breeds')
     const dogBreeds = await response.json();
-    populateDogSelect(dogBreeds);
+    fillDogSelect(dogBreeds);
 }
 
-const populateDogSelect = (breeds) => {
+const fillDogSelect = (breeds) => {
     const select = document.querySelector('.breed-select');
     const breedOptions = breeds.map(breed => {
         const option = document.createElement('option');
