@@ -227,15 +227,44 @@ footer {
     font-weight: 700;
 }
 
+#breedContainer select {
+    width: 15%;
+    margin-top: 10px;
+    padding: 10px;
+    border-radius: 6px;
+    margin-right: 10px;
+}
+
 #infoContainer {
     width: 100%;
 }
 
 #dog-image {
+    float: left;
     margin: 16px auto;
     object-fit: contain;
-    width: 50%;
+    width: 40%;
+    padding-top: 50px;
+    padding-right: 100px;
 
+}
+
+#dog-description {
+    padding-top: 115px;
+}
+
+#dog-description dt {
+    color: #FF245B;
+    font-size: 25px;
+    padding-bottom: 5px;
+    text-align: left;
+
+}
+
+#dog-description dd {
+    padding-bottom: 25px;
+    font-size: 20px;
+    text-align: left;
 }
 
 .loading {
