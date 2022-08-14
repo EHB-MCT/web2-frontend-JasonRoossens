@@ -50,7 +50,6 @@ const clearDogDescription = () => {
 
 const fillDogDescription = ({
     bred_for: bredFor,
-    bred_group: bredGroup,
     name,
     temperament,
     life_span: lifeSpan,
@@ -60,31 +59,27 @@ const fillDogDescription = ({
 }) => {
     clearDogDescription();
     createDescriptionEntry({
-        label: 'Name',
+        label: 'Name:',
         value: name
     })
     createDescriptionEntry({
-        label: 'Bred for',
+        label: 'Bred for:',
         value: bredFor
     })
     createDescriptionEntry({
-        label: 'Bred group',
-        value: bredGroup
-    })
-    createDescriptionEntry({
-        label: 'Temperament',
+        label: 'Temperament:',
         value: temperament
     })
     createDescriptionEntry({
-        label: 'Life span',
+        label: 'Life span:',
         value: lifeSpan
     })
     createDescriptionEntry({
-        label: 'Height [cm]',
+        label: 'Height [cm]:',
         value: height.metric
     })
     createDescriptionEntry({
-        label: 'Weight [kg]',
+        label: 'Weight [kg]:',
         value: weight.metric
     })
 }
